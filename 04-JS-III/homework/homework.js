@@ -7,6 +7,7 @@ function devolverPrimerElemento(array) {
 }
 
 
+
 function devolverUltimoElemento(array) {
   // Devuelve el último elemento de un array
   // Tu código:
@@ -57,7 +58,7 @@ function dePalabrasAFrase(palabras) {
   // con espacios entre cada palabra
   // Ejemplo: ['Hello', 'world!'] -> 'Hello world!'
   // Tu código:
-  return palabras.join(' ');
+  return palabras.join('Hola', 'Mundo!');
 }
 
 
