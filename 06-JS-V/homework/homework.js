@@ -8,12 +8,27 @@ function crearUsuario() {
   // {{nombre}} debe ser el nombre definido en cada instancia
   // Devuelve la clase
   // Tu código:
+      class Usuario {
+        constructor(opciones) {
+        this.usuario = opciones.usuario;
+        this.nombre = opciones.nombre;
+        this.email = opciones.email;
+        this.password = opciones.password;
+      }
+    }
+      Usuario.prototype.saludar = function () {
+        return "Hola, mi nombre es (${this.nombre})"
+      }
+        return Usuario;  
 }
 
 function agregarMetodoPrototype(Constructor) {
   // Agrega un método al Constructor del `prototype`
   // El método debe llamarse "saludar" y debe devolver la string "Hello World!"
   // Tu código:
+     Constructor.prototype.saludar = function () {
+    return 'Hello World!';
+  }
 }
 
 function agregarStringInvertida() {
@@ -22,8 +37,12 @@ function agregarStringInvertida() {
   // Ej: 'menem'.reverse() => menem
   // 'toni'.reverse() => 'inot'
   // Pista: Necesitarás usar "this" dentro de "reverse"
-}
-
+ String.prototype.reverse = function () {
+  var palabraInvertida = '';
+  for (var i = this.length -1; i>=0; i--) {
+  return palabraInvertida;
+  }
+ }
 // ---------------------------------------------------------------------------//
   //Crea el constructor de la clase "Persona"
   //Debe tener las propiedades: "nombre", "apellido", "edad" y "domicilio"
@@ -36,9 +55,15 @@ function agregarStringInvertida() {
     //  }
 
   class Persona {
-    constructor(/*Escribir los argumentos que recibe el constructor*/) {
+    constructor(nombre, apellido, edad, domicilio) {
       // Crea el constructor:
-
+      this.nombre = nombre,
+      this.apellido = apellido,
+      this.edad = edad,
+      this.domicilio = domicilio,
+      this.detalle = function(){
+        return this.nombre + this.apellido + this.edad + this.domicilio;
+      } 
     }
 }
 
@@ -64,4 +89,4 @@ module.exports = {
   crearInstanciaPersona,
   agregarMetodo, 
   Persona
-};
+}
